@@ -1,0 +1,43 @@
+.container-carrossel {
+    position: relative;
+    width: 300px; /* Largura desejada para o carrossel */
+    overflow: hidden; /* Oculta as imagens que excedem a largura do contêiner */
+    margin-top: 100px; /* Ajuste conforme necessário */
+    margin-left: 700px; /* Ajuste conforme necessário */
+}
+
+.container-carrosselimg {
+    position: relative; /* Define uma posição relativa para os botões */
+    display: flex;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao movimento do carrossel */
+}
+
+.carrossel {
+    width: 100%;
+    height: 100%;
+    margin: top -500px;
+}
+
+.carrossel img {
+    width: 100%; 
+    height: 100%;
+    display: none; 
+}
+
+.carrossel img:first-child {
+    display: block; 
+}
+
+.prev-btn, .next-btn {
+
+}
+
+.prev-btn {
+    left: -40px; /* Posiciona o botão da esquerda */
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%); /* Define o formato de triângulo para o botão esquerdo */
+}
+
+.next-btn {
+    right: -40px; /* Posiciona o botão da direita */
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%); /* Define o formato de triângulo para o botão direito */
+}
