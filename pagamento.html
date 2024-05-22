@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .cart-item {
+            margin: 10px 0;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        input[type="text"], input[type="tel"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Pagamento</h3>
+        <div id="cart"></div>
+        <h4>Total: R$ <span id="total">0</span></h4>
+
+        <h3>Dados do Cliente</h3>
+        <div class="grupo">
+            <input type="text" id="name" placeholder="Nome Completo" required>
+        </div>
+        <div class="grupo">
+            <input type="tel" id="phone" placeholder="Número de Telefone" required>
+        </div>
+        <div class="grupo">
+            <input type="text" id="cep" placeholder="CEP" required>
+        </div>
+        <div class="grupo">
+            <input type="text" id="address" placeholder="Endereço Completo" required>
+        </div>
+
+        <h3>Forma de Pagamento</h3>
+        <div class="grupo">
+            <select id="paymentMethod" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="PIX">PIX</option>
+                <option value="Débito">Débito</option>
+                <option value="Crédito">Crédito</option>
+            </select>
+        </div>
+
+        <button onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart');
+            let total = 0;
+
+            cart.forEach(item => {
+                let cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.textContent = `${item.product} - R$ ${item.price}`;
+                cartContainer.appendChild(cartItem);
+                total += item.price;
+            });
+
+            document.getElementById('total').textContent = total;
+        });
+
+        function finalizePurchase() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let cep = document.getElementById('cep').value;
+            let address = document.getElementById('address').value;
+            let paymentMethod = document.getElementById('paymentMethod').value;
+
+            if (!name || !phone || !cep || !address || !paymentMethod) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            let customerInfo = {
+                name: name,
+                phone: phone,
+                cep: cep,
+                address: address,
+                paymentMethod: paymentMethod
+            };
+
+            alert('Compra finalizada com sucesso!\n\n' +
+                  'Nome: ' + customerInfo.name + '\n' +
+                  'Telefone: ' + customerInfo.phone + '\n' +
+                  'CEP: ' + customerInfo.cep + '\n' +
+                  'Endereço: ' + customerInfo.address + '\n' +
+                  'Forma de Pagamento: ' + customerInfo.paymentMethod);
+
+            localStorage.removeItem('cart');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

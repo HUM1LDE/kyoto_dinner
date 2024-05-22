@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comida</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .produto {
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Comida</h3>
+        <div class="produto">
+            <p>Sushi - R$ 30,00</p>
+            <button onclick="addToCart('Sushi', 30)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <p>Sashimi - R$ 40,00</p>
+            <button onclick="addToCart('Sashimi', 40)">Adicionar ao Carrinho</button>
+        </div>
+        <a href="pagamento.html">Ir para Pagamento</a>
+    </div>
+
+    <script>
+        function addToCart(product, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ product, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(product + ' adicionado ao carrinho!');
+        }
+    </script>
+</body>
+</html>
