@@ -34,17 +34,17 @@ body {
 
 .botao-voltar {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ff1e00;
     color: #fff;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-decoration: none;
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
 .botao-voltar:hover {
-    background-color: #0056b3;
+    background-color: #ff1e00;
 }
 
 .container {
