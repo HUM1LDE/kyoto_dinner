@@ -1,0 +1,79 @@
+
+.container {
+    background-color:rgb(49, 49, 49); /* Cor de fundo do container */
+    padding: 20px;
+    border-radius: 10px; /* Borda arredondada */
+}
+
+.categoria {
+   margin-left: 10px;
+    
+}
+
+.categoria ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.categoria ul li {
+    margin-bottom: 100px;
+}
+
+.categoria ul li a {
+    text-decoration: none;
+    color: red; /* Cor dos links */
+    font-weight: bold;
+}
+
+.categoria ul li a:hover {
+    color: #ff4500; /* Cor ao passar o mouse */
+}
+
+/* Estilos específicos para o rodapé na página de delivery */
+
+footer {
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto no rodapé */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.redes-sociais {
+    list-style-type: none;
+    padding: 0;
+}
+
+.redes-sociais li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.redes-sociais li a {
+    color: #fff; /* Cor dos ícones das redes sociais */
+    font-size: 20px;
+}
+
+.links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.links li a {
+    text-decoration: none;
+    color: #fff; /* Cor dos links no rodapé */
+}
+
+.links li a:hover {
+    color: #ff4500; /* Cor ao passar o mouse nos links do rodapé */
+}
+
+.toque-final {
+    margin-top: 20px;
+    font-style: italic;
+}

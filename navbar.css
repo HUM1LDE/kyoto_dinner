@@ -1,0 +1,40 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: red; /* Cor de fundo da navbar */
+    padding: 10px 20px; /* Espaçamento interno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white; /* Cor do texto do logo */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style-type: none; /* Remove marcadores de lista */
+    margin: 0;
+    padding: 0;
+   margin-right: 800px;
+}
+
+.nav-links li {
+    margin-right: 90px; /* Espaçamento entre os itens */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro item */
+}
+
+.nav-links li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
